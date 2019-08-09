@@ -7,3 +7,18 @@
 //
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
+window.addEventListener('load', (e) => {
+
+
+    
+
+function Tab(topic) {
+  const tab = document.createElement('div');
+  tab.classList.add('tab');
+  tab.textContent = topic;
+  return tab;
+}
+
+
+
+});
