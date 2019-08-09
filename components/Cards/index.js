@@ -27,6 +27,26 @@ window.addEventListener('load', (e) => {
       document.querySelector(".cards-container").appendChild(newCard);
    
       })
+      response.data.articles.javascript.forEach(element => {
+        let newCard = createCard(element);
+   document.querySelector(".cards-container").appendChild(newCard);
+
+   })
+   response.data.articles.jquery.forEach(element => {
+    let newCard = createCard(element);
+document.querySelector(".cards-container").appendChild(newCard);
+
+})
+response.data.articles.node.forEach(element => {
+    let newCard = createCard(element);
+document.querySelector(".cards-container").appendChild(newCard);
+
+})
+response.data.articles.technology.forEach(element => {
+    let newCard = createCard(element);
+document.querySelector(".cards-container").appendChild(newCard);
+
+})
      
   })
   .catch( error => {
