@@ -37,4 +37,58 @@ console.log(headerContainer)
 
 
 headerContainer.appendChild(Header());
+
+
+//////////////////////
+
+
+
+
+    axios.get('https://dog.ceo/api/breed/mastiff/images/random/1')
+    .then( (response) => {
+      console.log(response)
+      response.data.message.forEach(element =>{
+          let newDog = createCarousel(element);
+      document.querySelector(".carousel-container").appendChild(newDog);
+    })
+    })
+     .catch( error => {
+        console.log("Error:", error);
+      })
+    
+    
+    function createCarousel (doggo) {
+      const carousel = document.createElement('div');
+      const leftButton = document.createElement('div');
+      const img1 = document.createElement('img');
+      const img2 = document.createElement('img');
+      const img3 = document.createElement('img');
+      const img4 = document.createElement('img');
+      const rightButton = document.createElement('div');
+    ///////////
+    carousel.appendChild(leftButton);
+    carousel.appendChild(img1);
+    carousel.appendChild(img2);
+    carousel.appendChild(img3);
+    carousel.appendChild(img4);
+    carousel.appendChild(rightButton);
+    ////////////
+    carousel.classList.add('carousel');
+    leftButton.classList.add('left-button');
+    rightButton.classList.add('right-button');
+    img1.classList.add('img');
+    img2.classList.add('img');
+    img3.classList.add('img');
+    img4.classList.add('img');
+    ////////////
+    leftButton.textContent = "click!";
+    img1.src = doggo;
+    img2.src = doggo;
+    img3.src = doggo;
+    img4.src = doggo;
+    rightButton.textContent = "click!";
+    
+    return carousel;
+    }
+    
 });
